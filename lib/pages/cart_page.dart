@@ -58,18 +58,25 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text(
-          "Cart Page",
-          style: TextStyle(
-              // fontWeight: FontWeight.bold,
-              ),
-        ),
-        centerTitle: true,
         foregroundColor: Theme.of(context).colorScheme.primary,
       ),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      // backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: const Color.fromARGB(255, 233, 231, 231),
+
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              "Cart",
+              style: TextStyle(
+                // color: Theme.of(context).colorScheme.primary,
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+              ),
+            ),
+          ),
           //cart list
           Expanded(
             child: cart.isEmpty
@@ -83,7 +90,7 @@ class CartPage extends StatelessWidget {
                       //return as a cart tile UI
                       return ListTile(
                         title: Text(item.name),
-                        subtitle: Text(item.price.toStringAsFixed(2)),
+                        subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
                         trailing: IconButton(
                           onPressed: () {
                             removeItemFromCart(context, item);
@@ -94,11 +101,13 @@ class CartPage extends StatelessWidget {
                     }),
           ),
           //pay button
-          Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: MyButton(
-              onTap: () => payButtonPressed(context),
-              child: const Text("PAY NOW"),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: MyButton(
+                onTap: () => payButtonPressed(context),
+                child: const Text("PAY NOW"),
+              ),
             ),
           ),
         ],

@@ -23,7 +23,7 @@ class MyDrawer extends StatelessWidget {
 
           //shop tile
           MyListTile(
-            text: "Shop",
+            text: "S H O P",
             icon: Icons.home,
             onTap: () {
               Navigator.pop(context);
@@ -32,10 +32,18 @@ class MyDrawer extends StatelessWidget {
 
           //cart tile
           MyListTile(
-            text: "Cart",
+            text: "C A R T",
             icon: Icons.shopping_cart,
             onTap: () {
               Navigator.pushNamed(context, '/cart_page');
+            },
+          ),
+
+          MyListTile(
+            text: "S E T T I N G S",
+            icon: Icons.settings,
+            onTap: () {
+              Navigator.pushNamed(context, '/setting_page');
             },
           ),
 
@@ -43,7 +51,7 @@ class MyDrawer extends StatelessWidget {
 
           //exit shop tile
           MyListTile(
-            text: "Exit",
+            text: "E X I T",
             icon: Icons.logout,
             onTap: () {
               Navigator.pushNamedAndRemoveUntil(

@@ -13,7 +13,7 @@ class ShopPage extends StatelessWidget {
     final products = context.watch<Shop>().shop;
 
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: const Color.fromARGB(255, 233, 231, 231),
       appBar: AppBar(
         actions: [
           IconButton(
@@ -25,7 +25,7 @@ class ShopPage extends StatelessWidget {
         ],
         backgroundColor: Colors.transparent,
         elevation: 0,
-        foregroundColor: Theme.of(context).colorScheme.primary,
+        // foregroundColor: Theme.of(context).colorScheme.primary,
       ),
       drawer: const MyDrawer(),
       body: ListView(
@@ -34,27 +34,28 @@ class ShopPage extends StatelessWidget {
             height: 25,
           ),
           //shop title
-          Padding(
-            padding: const EdgeInsets.only(left: 25),
+          const Padding(
+            padding: EdgeInsets.only(left: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Shop",
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                      // color: Theme.of(context).colorScheme.primary,
                       fontSize: 35),
                 ),
 
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
 
                 //shop subtitle
                 Text(
                   "Pick from a selected list of premium products",
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.primary),
+                  // style:
+                  //     TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
               ],
             ),

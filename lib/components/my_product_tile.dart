@@ -45,7 +45,8 @@ class MyProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.inversePrimary,
+        // color: Theme.of(context).colorScheme.inversePrimary,
+        color: const Color.fromARGB(255, 209, 208, 208),
         borderRadius: BorderRadius.circular(12),
       ),
       margin: const EdgeInsets.all(10),
@@ -99,8 +100,9 @@ class MyProductTile extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: const Color.fromARGB(255, 223, 221, 221)),
+                  borderRadius: BorderRadius.circular(12),
+                  color: const Color.fromARGB(255, 223, 221, 221),
+                ),
                 child: IconButton(
                   onPressed: () {
                     addToCart(context);
